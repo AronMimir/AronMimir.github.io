@@ -1,0 +1,107 @@
+*{font-family:Poppins,sans-serif;font-family:'Roboto Mono',monospace}
+body{background-color:#000;color:#fff;font-family:Arial,sans-serif;margin:0;padding:0}
+.container{max-width:960px;margin:0 auto;padding:20px}
+footer,header{background-color:rgba(131,86,36,.952);padding:20px 0;width:auto;display:flex}
+img{max-width:140%;height:auto}
+.content{display:grid;grid-template-columns:1fr 3fr;width:100%;grid-gap:100px;padding:20px}
+.content h1{font-size:24px}
+.content p{font-size:16px}
+.section{display:flex;flex-direction:column;align-items:center;margin-top:20px}
+.grid-item{padding:20px;text-align:center;cursor:pointer;background-color:rgba(131,86,36,.952);color:#000;width:100%;max-width:250px}
+.grid-item a{color:#000;text-decoration:none}
+.grid-item:hover{background-color:grey}
+.reviews{margin-top:20px;display:flex;flex-direction:column}
+.review{border:2px solid rgba(131,86,36,.952);padding:20px;margin-bottom:20px;display:flex;align-items:center}
+.review-text{flex:1}
+.review-profile{margin-right:20px}
+.stars{color:#ff0}
+.review-profile img{width:30%}
+table{width:100%;border-collapse:collapse;margin-top:20px;border:3px solid rgba(131,86,36,.952)}
+td,th{border:1px solid #fff;padding:10px;text-align:left}
+th{background-color:rgba(131,86,36,.952);color:#000}
+@media screen and (max-width:48em){
+table{border:3px solid rgba(131,86,36,.952)}
+table thead tr{display:none}
+table tr{display:block}
+table td,table th{padding:.5em}
+table td{text-align:right;display:block;font-size:1em}
+table td::before{content:attr(data-title) ": ";float:left}
+tbody tr:nth-child(even){background-color:rgba(131,86,36,.952);color:#fff}
+}
+.tab .content,.tab input{display:none}
+.tab input:checked~.content{display:block}
+.tab{max-width:600px;margin-bottom:10px}
+.tab label{display:block;padding:10px;font-weight:700;color:#fff;background:rgba(131,86,36,.952);cursor:pointer}
+.tab .content{padding:10.1px;background:#575757}
+.tab label{position:relative}
+.tab label::after{display:block;content:"\25b6";position:absolute;right:10px;top:10px;transition:all .4s}
+.tab input:checked~label::after{transform:rotate(90deg)}
+.content1{display:grid;grid-template-columns:3fr 1fr;width:100%;grid-gap:100px;padding:20px}
+input[type=checkbox].menuInput{display:none}
+.menuLabel{position:fixed;top:.5em;left:.5em;width:1.6em;height:1.6em;font-size:1.5em;text-align:center;color:#fff;background-color:rgba(54,54,54,.952);border-radius:50%;transition:all .4s ease;z-index:999}
+.menuInput:checked+.menuLabel{transform:translate(-10px,-3px) rotate(-90deg);transition:all .5s ease}
+.menuInput:checked~.topmenu{position:fixed;top:3em;left:0;z-index:980;transition:all .5s ease}
+.topmenu{display:block;position:fixed;top:3em;left:-40em;z-index:980;padding:0;margin:0;width:70%;background-color:rgba(131,99,63,.952);transition:all .5s ease}
+.topmenu a{display:block;font-size:.9em;color:#fff;text-decoration:none;text-transform:uppercase;text-align:center;letter-spacing:2px;border-bottom:1px solid #965621}
+.logo a:hover,.topmenu a:active,.topmenu a:focus,.topmenu a:hover{background-color:rgba(102,79,54,.952);color:#fff;margin-bottom:0;transition:all .3s ease}
+.topmenu a:current{color:#ff4500}
+.topnav{background-color:rgba(131,99,63,.952)}
+.topnav p{margin:0;padding:.4em 0;color:#fff;letter-spacing:.1em;text-align:center}
+@media screen and (min-width:48em){
+.topnav{z-index:2;top:0;left:0;width:100%}
+}
+@media screen and (min-width:60em){
+.topnav{display:grid;grid-template-columns:1fr 4fr}
+.topmenu{display:flex;flex-flow:row;position:relative;top:0;left:47em;width:100%;background-color:transparent;transition:none}
+.topmenu a{padding:.6em 1.5em .5em 1.5em;border-bottom:none;background-color:transparent}
+.menuLabel{display:none}
+}
+.overlay{position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.7);transition:opacity .5s;visibility:hidden;opacity:0}
+.overlay:target{visibility:visible;opacity:1}
+.popup{margin:70px auto;padding:30px 50px;background:rgba(131,99,63,.952);border-radius:5px;width:250px;max-width:100%;position:relative;transition:all 5s ease-in-out;box-shadow:0 2px 4px rgba(0,0,0,.2);display:flex;justify-content:center;align-items:center}
+.popup h2{margin-top:0;color:#fff;font-family:Tahoma,Arial,sans-serif}
+.popup .close{position:absolute;top:20px;right:30px;transition:all .2s;font-size:30px;font-weight:700;text-decoration:none;color:#333}
+.popup .close:hover{color:var(--a)}
+.popup .content{max-height:30%;overflow:auto}
+.button{background-color:#fff;text-decoration:none;border:0;border-radius:10px;color:#000;font-size:15px;padding:10px 25px}
+.logo1{width:150px;height:auto;margin-left:50px;margin-right:50px}
+@media screen and (max-width:760px){
+.container{grid-template-columns:1fr}
+img{width:30%}
+h1{font-size:20px}
+p{font-size:14px}
+}
+.intro{position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:#000;transition:1s}
+.logo-header{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%)}
+.logo{position:relative;display:inline-block;bottom:-20px;opacity:0}
+.logo.active{bottom:0;opacity:1;transition:ease-in-out .5s}
+.logo.fade{bottom:150px;opacity:0;transition:ease-in-out .5s}
+.slider-frame{overflow:hidden;height:800px;width:1200px;margin-left:360px;margin-top:20px}
+@keyframes slide_animation{
+0%{left:0}
+10%{left:0}
+20%{left:1200px}
+30%{left:1200px}
+40%{left:2400px}
+50%{left:2400px}
+60%{left:1200px}
+70%{left:1200px}
+80%{left:0}
+90%{left:0}
+100%{left:0}
+}
+@-webkit-keyframes slide_animation{
+0%{left:0}
+10%{left:0}
+20%{left:1200px}
+30%{left:1200px}
+40%{left:2400px}
+50%{left:2400px}
+60%{left:1200px}
+70%{left:1200px}
+80%{left:0}
+90%{left:0}
+100%{left:0}
+}
+.slide-images{width:3600px;height:800px;margin:0 0 0 -2400px;position:relative;-webkit-animation-name:slide_animation;animation-name:slide_animation;-webkit-animation-duration:33s;animation-duration:33s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-play-state:running;animation-play-state:running}
+.img-container{height:800px;width:1200px;position:relative;float:left}
